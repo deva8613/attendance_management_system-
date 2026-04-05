@@ -1,0 +1,242 @@
+body {
+     margin:0;
+    padding:0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 350px;
+    margin: 80px auto;
+    padding: 25px; /* BOX MODEL */
+    border: 2px solid #ddd; /* BOX MODEL */
+    border-radius: 12px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px; /* BOX MODEL */
+    margin: 10px 0; /* BOX MODEL */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px #667eea;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff512f;
+}
+
+a {
+    display:block;
+    margin:10px;
+    padding:10px;
+    border-radius:6px;
+    background:#f4f4f4;
+    transition:0.3s;
+}
+
+a:hover {
+    background:#667eea;
+    color:white;
+    transform: translateY(-3px);
+}
+
+/* Success specific styling */
+.success-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+strong {
+    color: #667eea;
+}
+/* Color Coding for Percentages */
+.low-attendance {
+    color: #e74c3c; /* Red */
+    font-weight: bold;
+}
+
+.high-attendance {
+    color: #27ae60; /* Green */
+    font-weight: bold;
+}
+
+/* Table Hover Effects */
+table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+tbody tr {
+    transition: background 0.3s ease;
+}
+
+tbody tr:hover {
+    background: #f8f9ff !important;
+}
+
+/* Staggered Row Animation */
+tbody tr {
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Color coding for search results */
+.status-present {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.status-absent {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Ensure the table fills the container nicely */
+.container table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+/* Row entrance animation */
+tbody tr {
+    animation: fadeInRow 0.5s ease forwards;
+}
+
+@keyframes fadeInRow {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* --- ONE-WORD ROW LAYOUT STYLES --- */
+
+.dashboard-body {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.dashboard-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 400px; /* Keeps the rows neat and compact */
+    text-align: center;
+}
+
+.user-welcome h1 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.menu-rows-minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row-item {
+    background: #f8f9ff !important;
+    padding: 15px 25px !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    border: 1px solid #e0e0e0 !important;
+    display: flex !important;
+    flex-direction: row !important; /* Icon and Label on the same line */
+    align-items: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.row-item:hover {
+    background: #667eea !important;
+    border-color: #667eea !important;
+    transform: translateX(10px); /* Slides right on hover */
+}
+
+.row-item:hover .icon, 
+.row-item:hover .label {
+    color: white !important;
+}
+
+.row-item .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.row-item .label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.logout-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Entrance Animations */
+.animate-1 { animation: slideInRow 0.4s ease forwards 0.1s; }
+.animate-2 { animation: slideInRow 0.4s ease forwards 0.2s; }
+.animate-3 { animation: slideInRow 0.4s ease forwards 0.3s; }
+.animate-4 { animation: slideInRow 0.4s ease forwards 0.4s; }
+
+@keyframes slideInRow {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
